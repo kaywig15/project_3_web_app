@@ -46,7 +46,6 @@ function Todos() {
       </form>
 
       <div>
-        <Button as="input" type="button" value="Input" />
         <button onClick={() => setFilter("all")}>All</button>
         <button onClick={() => setFilter("completed")}>Completed</button>
         <button onClick={() => setFilter("incomplete")}>Incomplete</button>
