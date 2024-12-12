@@ -1,11 +1,6 @@
 .navbar {
   background-color: #007bff;
-}
-
-.navbar .navbar-brand {
-  color: white !important;
-  font-weight: bold;
-  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .navbar .nav-link {
@@ -21,8 +16,4 @@
 
 .navbar-toggler-icon {
   background-color: #ffffff !important;
-}
-
-.navbar {
-  margin-bottom: 20px;
 }

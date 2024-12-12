@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 function Contact() {
   return (
-    <div>
+    <div className="contact-style">
       <h2>Contact Us</h2>
       <form>
         <label>

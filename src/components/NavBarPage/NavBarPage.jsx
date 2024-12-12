@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import "./NavBarPage.css";
 function NavBarPage() {
   return (
-    <Navbar expand="lg" className="navbar center-text">
+    <Navbar expand="lg" className="navbar">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
