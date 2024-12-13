@@ -4,7 +4,6 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 function Contact() {
-  // Setting up state for each form field
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -12,7 +11,6 @@ function Contact() {
     comments: "",
   });
 
-  // Handle change in form fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -21,11 +19,9 @@ function Contact() {
     }));
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData); // For now, just log the form data
-    // You can add form submission logic here (e.g., API call)
+    console.log(formData);
   };
 
   return (
