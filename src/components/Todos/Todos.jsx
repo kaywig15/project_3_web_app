@@ -1,17 +1,21 @@
 import React, { useState } from "react";
-import "./todos.css";
+import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 
 function Todos() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
   const [filter, setFilter] = useState("all");
+  const [nextId, setNextId] = useState(1);
 
   const handleAddTodo = (e) => {
     e.preventDefault();
     if (newTodo.trim() === "") return;
-    setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
+    setTodos([...todos, { id: nextId, text: newTodo, completed: false }]);
     setNewTodo("");
+    setNextId(nextId + 1);
   };
 
   const handleToggleComplete = (id) => {
@@ -33,39 +37,80 @@ function Todos() {
   });
 
   return (
-    <div>
-      <h2>Todos</h2>
-      <form onSubmit={handleAddTodo}>
-        <input
-          type="text"
-          value={newTodo}
-          onChange={(e) => setNewTodo(e.target.value)}
-          placeholder="New Todo"
-        />
-        <button type="submit">Add</button>
-      </form>
-
+    <>
       <div>
-        <button onClick={() => setFilter("all")}>All</button>
-        <button onClick={() => setFilter("completed")}>Completed</button>
-        <button onClick={() => setFilter("incomplete")}>Incomplete</button>
+        <InputGroup className="mb-3">
+          <Form.Control
+            value={newTodo}
+            onChange={(e) => setNewTodo(e.target.value)}
+            aria-label="Enter your todo"
+            placeholder="Add Todo"
+          />
+          <Button variant="outline-secondary" onClick={handleAddTodo}>
+            Add Todo
+          </Button>
+        </InputGroup>
       </div>
 
-      <ul>
-        {filteredTodos.map((todo) => (
-          <li
-            key={todo.id}
-            style={{ textDecoration: todo.completed ? "line-through" : "none" }}
-          >
-            <span>{todo.text}</span>
-            <button onClick={() => handleToggleComplete(todo.id)}>
-              {todo.completed ? "Undo" : "Complete"}
-            </button>
-            <button onClick={() => handleRemoveTodo(todo.id)}>Remove</button>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div className="mb-3">
+        <Button variant="outline-secondary" onClick={() => setFilter("all")}>
+          All Todos
+        </Button>
+        <Button
+          variant="outline-secondary"
+          onClick={() => setFilter("completed")}
+        >
+          Completed
+        </Button>
+        <Button
+          variant="outline-secondary"
+          onClick={() => setFilter("incomplete")}
+        >
+          Incomplete
+        </Button>
+      </div>
+
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredTodos.map((todo) => (
+            <tr key={todo.id}>
+              <td>{todo.id}</td>
+              <td
+                style={{
+                  textDecoration: todo.completed ? "line-through" : "none",
+                }}
+              >
+                {todo.text}
+              </td>
+              <td>
+                <Button
+                  variant={todo.completed ? "success" : "warning"}
+                  onClick={() => handleToggleComplete(todo.id)}
+                >
+                  {todo.completed ? "Completed" : "Incomplete"}
+                </Button>
+              </td>
+              <td>
+                <Button
+                  variant="danger"
+                  onClick={() => handleRemoveTodo(todo.id)}
+                >
+                  Remove
+                </Button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </>
   );
 }
 

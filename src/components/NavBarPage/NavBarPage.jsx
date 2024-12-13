@@ -11,7 +11,7 @@ function NavBarPage() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/todos">
-              Todos
+              Home
             </Nav.Link>
             <Nav.Link as={Link} to="/contact">
               Contact
