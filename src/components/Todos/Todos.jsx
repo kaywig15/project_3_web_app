@@ -27,7 +27,16 @@ function Todos() {
   };
 
   const handleRemoveTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos(
+      todos.filter((todo) => todo.id !== id),
+      () => {
+        if (todos.length > 0) {
+          setNextId(Math.max(...todos.map((todo) => todo.id)) + 1);
+        } else {
+          setNextId(1);
+        }
+      }
+    );
   };
 
   const filteredTodos = todos.filter((todo) => {
@@ -53,17 +62,20 @@ function Todos() {
       </div>
 
       <div className="mb-3">
-        <Button variant="outline-secondary" onClick={() => setFilter("all")}>
+        <Button
+          variant={filter === "all" ? "primary" : "outline-secondary"} // Highlight "All Todos" when active
+          onClick={() => setFilter("all")}
+        >
           All Todos
         </Button>
         <Button
-          variant="outline-secondary"
+          variant={filter === "completed" ? "primary" : "outline-secondary"} // Highlight "Completed" when active
           onClick={() => setFilter("completed")}
         >
           Completed
         </Button>
         <Button
-          variant="outline-secondary"
+          variant={filter === "incomplete" ? "primary" : "outline-secondary"} // Highlight "Incomplete" when active
           onClick={() => setFilter("incomplete")}
         >
           Incomplete
