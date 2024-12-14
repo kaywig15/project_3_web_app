@@ -5,11 +5,11 @@ import Navbar from "react-bootstrap/Navbar";
 import "./NavBarPage.css";
 function NavBarPage() {
   return (
-    <Navbar expand="lg" className="navbar">
+    <Navbar expand="lg" className="navbar oswald">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="mx-auto">
             <Nav.Link as={Link} to="/todos">
               Home
             </Nav.Link>

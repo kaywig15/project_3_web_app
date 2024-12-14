@@ -4,16 +4,16 @@
 }
 
 .navbar .nav-link {
-  color: white !important;
+  color: white;
   font-size: 1.1rem;
   padding: 0.5rem 1rem;
 }
 
 .navbar .nav-link:hover {
-  color: #ffcc00 !important;
+  color: #ffcc00;
   text-decoration: underline;
 }
 
 .navbar-toggler-icon {
-  background-color: #ffffff !important;
+  background-color: #ffffff;
 }
