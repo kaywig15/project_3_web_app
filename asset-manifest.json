@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kaywig15/project_3_web_app/static/css/main.93120008.css",
+    "main.js": "/kaywig15/project_3_web_app/static/js/main.ae604d86.js",
+    "index.html": "/kaywig15/project_3_web_app/index.html",
+    "main.93120008.css.map": "/kaywig15/project_3_web_app/static/css/main.93120008.css.map",
+    "main.ae604d86.js.map": "/kaywig15/project_3_web_app/static/js/main.ae604d86.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93120008.css",
+    "static/js/main.ae604d86.js"
+  ]
+}
