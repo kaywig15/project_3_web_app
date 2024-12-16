@@ -49,7 +49,7 @@ function Todos() {
   return (
     <>
       <Container className="contact-main oswald" fluid="md">
-        <div>
+        <div className="contact-main">
           <InputGroup className="mb-3 oswald">
             <Form.Control
               value={newTodo}
