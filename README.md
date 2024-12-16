@@ -17,6 +17,6 @@
 
 ## Future Improvements
 
-- Upcoming
-- Upcoming
-- Upcoming
+- Have the number section on the left of the screen in todo list reset item number when item is deleted.
+- Have a way to find deleted items and reinstate them.
+- Have the contact form connected to a service that monitors the entries.
