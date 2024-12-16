@@ -15,6 +15,17 @@
 
 - JavaScript, React.js, HTML, CSS
 
+## User Stories
+
+- As a user, I want to add and remove tasks that I need to complete
+- As a user, I want to be able to see the tasks that I need to complete and tasks that have been completed
+- As a user, I want to clearly see which tab is currently open (i.e. All Todos, Completed, Incomplete state).
+
+## Wireframes
+
+<img src="./public/wireframe1.png">
+<img src="./public/wireframe2.png">
+
 ## Future Improvements
 
 - Have the number section on the left of the screen in todo list reset item number when item is deleted.
