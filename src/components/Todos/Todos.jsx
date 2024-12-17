@@ -65,19 +65,19 @@ function Todos() {
 
         <div className="mb-3 oswald">
           <Button
-            variant={filter === "all" ? "primary" : "outline-secondary"} // Highlight "All Todos" when active
+            variant={filter === "all" ? "primary" : "outline-secondary"}
             onClick={() => setFilter("all")}
           >
             All Todos
           </Button>
           <Button
-            variant={filter === "completed" ? "primary" : "outline-secondary"} // Highlight "Completed" when active
+            variant={filter === "completed" ? "primary" : "outline-secondary"}
             onClick={() => setFilter("completed")}
           >
             Completed
           </Button>
           <Button
-            variant={filter === "incomplete" ? "primary" : "outline-secondary"} // Highlight "Incomplete" when active
+            variant={filter === "incomplete" ? "primary" : "outline-secondary"}
             onClick={() => setFilter("incomplete")}
           >
             Incomplete
